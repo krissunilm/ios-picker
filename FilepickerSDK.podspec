@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.author       = { "Liyan Chang" => "liyan@filepicker.io" }
 
   s.source       = {
-    :git => 'https://github.com/escherba/ios-picker.git',
+    :git => 'https://github.com/krissunilm/ios-picker.git',
     :tag => '2.7.3'
   }
 

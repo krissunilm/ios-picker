@@ -33,7 +33,7 @@
 @synthesize selectedAssets = _selectedAssets;
 @synthesize tableView = _tableView;
 
-UIImage *selectOverlay;
+UIImage *selectOverlayImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,9 +49,9 @@ UIImage *selectOverlay;
 {
     [super viewDidLoad];
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")){
-        selectOverlay = [UIImage imageWithContentsOfFile:[[FPLibrary frameworkBundle] pathForResource:@"SelectOverlayiOS7" ofType:@"png"]];
+        selectOverlayImage = [UIImage imageWithContentsOfFile:[[FPLibrary frameworkBundle] pathForResource:@"SelectOverlayiOS7" ofType:@"png"]];
     } else {
-        selectOverlay = [UIImage imageWithContentsOfFile:[[FPLibrary frameworkBundle] pathForResource:@"SelectOverlay" ofType:@"png"]];
+        selectOverlayImage = [UIImage imageWithContentsOfFile:[[FPLibrary frameworkBundle] pathForResource:@"SelectOverlay" ofType:@"png"]];
     }
     
     NSInteger gCount = [self.assetGroup numberOfAssets];
@@ -206,7 +206,7 @@ UIImage *selectOverlay;
         
         if (self.selectMultiple) {
             //Add overlay
-            UIImageView *overlay = [[UIImageView alloc] initWithImage:selectOverlay];
+            UIImageView *overlay = [[UIImageView alloc] initWithImage:selectOverlayImage];
             
             //If this asset is selected, leave the overlay on.
             overlay.hidden = ![self.selectedAssets containsObject:asset];

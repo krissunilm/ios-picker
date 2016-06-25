@@ -1,5 +1,8 @@
+source 'https://github.com/Livefyre/cocoapods.git'
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '6.0'
-xcodeproj 'FPPicker.xcodeproj'
+project 'FPPicker.xcodeproj'
 
-link_with 'FPPicker'
+target 'FPPicker' do
 pod 'LFJSONKit', '~> 1.6a'
+end
